@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://PiecesGrid.gd" type="Script" id=1]
+[ext_resource path="res://Piece.tscn" type="PackedScene" id=2]
+
+[node name="PiecesGrid" type="Node2D"]
+position = Vector2( 22, 22 )
+script = ExtResource( 1 )
+Piece = ExtResource( 2 )

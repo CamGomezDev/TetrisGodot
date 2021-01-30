@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/images/background.png" type="Texture" id=1]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Main.gd" type="Script" id=3]
+[ext_resource path="res://PiecesGrid.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/images/background-frame.png" type="Texture" id=5]
+
+[node name="Main" type="Node"]
+script = ExtResource( 3 )
+
+[node name="BackgroundSprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="HUD" parent="." instance=ExtResource( 2 )]
+
+[node name="PiecesGrid" parent="." instance=ExtResource( 4 )]
+
+[node name="background-frame" type="Sprite" parent="."]
+position = Vector2( 187, 352 )
+texture = ExtResource( 5 )
+[connection signal="start_game" from="HUD" to="." method="_on_HUD_start_game"]
+[connection signal="lose_game" from="PiecesGrid" to="." method="_on_PiecesGrid_lose_game"]
